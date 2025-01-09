@@ -7,7 +7,7 @@ namespace KumarTMC_EightToTen_Endpoints.Services
 {
     public class RestaurantPickerService
     {
-        public string RestaurantPicker(string input)
+        public string RestaurantPicker(string FastFoodCasualDiningFineDining)
         {
             string[] FineDining = new string[]
 {
@@ -19,11 +19,11 @@ string[] FastFood = new string[]
 };
 string[] CasualDining = new string[]
 {
-"Sam's Donuts" , "Starbucks ","Dutch Bros", "Frank's downtown cafe" , " Bean and Leaf Cafe" , "Rainbow Velvet" , "Red's" ,"Cafe Aroma" , " Tea Amo", "Sunshine Cafe..;;;;;;;;;;;;;;;;;;;;;;....................................................................................."
+"Sam's Donuts" , "Starbucks ","Dutch Bros", "Frank's downtown cafe" , " Bean and Leaf Cafe" , "Rainbow Velvet" , "Red's" ,"Cafe Aroma" , " Tea Amo", "Sunshine Cafe"
 
 };
             Random random = new Random();
-            switch (input)
+            switch (FastFoodCasualDiningFineDining)
             {
                 case "fast food":
                     int ran = random.Next(0, FastFood.Length);

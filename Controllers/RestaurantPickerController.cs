@@ -23,9 +23,9 @@ namespace KumarTMC_EightToTen_Endpoints.Controllers
 
         [HttpGet]
         [Route("RestaurantPicker/{input}")]
-public string RestaurantPicker(string input)
+public string RestaurantPicker(string FastFoodCasualDiningFineDining)
         {
-            return _restaurantPickerService.RestaurantPicker(input);
+            return _restaurantPickerService.RestaurantPicker(FastFoodCasualDiningFineDining);
         }
 
     }
