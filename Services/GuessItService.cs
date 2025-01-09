@@ -7,74 +7,88 @@ namespace KumarTMC_EightToTen_Endpoints.Services
 {
     public class GuessItService
     {
-        public string GuessIt(string difficulty, int guessnum)
+        public string hard(string guessnum)
         {
-            switch (difficulty)
+            Random random = new Random();
+            int randomnum = random.Next(1, 101);
+            bool valid = int.TryParse(guessnum, out int var);
+            if (valid)
             {
-                case "hard":
-                    
-                    Random random = new Random();
-                    int randomnum = random.Next(1, 101);
-                     
-                    if (randomnum > guessnum)
-                    {
-                        return " your guess is lower than my number";
-                    }
-                    else if (randomnum < guessnum)
-                    {
-                        return " your guess is greater than my number";
-                    }
-                    else
-                    {
-                        return " your guess is equal to my number";
-                    }
-                    
 
-                case "medium":
-                   
-                    Random mrandom = new Random();
-                    int mrandomnum = mrandom.Next(1, 51);
-                    
-                    if (mrandomnum > guessnum)
-                    {
-                        return " your guess is lower than my number";
-                    }
-                    else if (mrandomnum < guessnum)
-                    {
-                        return " your guess is greater than my number";
-                    }
-                    else
-                    {
-                        return " your guess is equal to my number";
-                    }
-
-                    
-
-                case "easy":
-                    
-                    Random erandom = new Random();
-                    int erandomnum = erandom.Next(1, 11);
-               
-                    if (erandomnum > guessnum)
-                    {
-                        return " your guess is lower than my number";
-                    }
-                    else if (erandomnum < guessnum)
-                    {
-                        return " your guess is greater than my number";
-                    }
-                    else
-                    {
-                        return " your guess is equal to my number";
-                    }
-
-                    
-
-                default:
-                    return "input invalid";
-
+                if (randomnum > var)
+                {
+                    return " your guess is lower than my number";
+                }
+                else if (randomnum < var)
+                {
+                    return " your guess is greater than my number";
+                }
+                else
+                {
+                    return " your guess is equal to my number";
+                }
             }
-
+            else
+            {
+                return "invalid try again pick a number between 1-100";
+            }
         }
+
+                public string medium(string guessnum)
+        {
+            Random random = new Random();
+            int randomnum = random.Next(1, 51);
+            bool valid = int.TryParse(guessnum, out int var);
+            if (valid)
+            {
+
+                if (randomnum > var)
+                {
+                    return " your guess is lower than my number";
+                }
+                else if (randomnum < var)
+                {
+                    return " your guess is greater than my number";
+                }
+                else
+                {
+                    return " your guess is equal to my number";
+                }
+            }
+            else
+            {
+                return "invalid try again pick a number between 1-50";
+            }
+        }
+
+                public string easy(string guessnum)
+        {
+            Random random = new Random();
+            int randomnum = random.Next(1, 11);
+            bool valid = int.TryParse(guessnum, out int var);
+            if (valid)
+            {
+
+                if (randomnum > var)
+                {
+                    return " your guess is lower than my number";
+                }
+                else if (randomnum < var)
+                {
+                    return " your guess is greater than my number";
+                }
+                else
+                {
+                    return " your guess is equal to my number";
+                }
+            }
+            else
+            {
+                return "invalid try again pick a number between 1-10";
+            }
+        }
+
+
+
     }
 }

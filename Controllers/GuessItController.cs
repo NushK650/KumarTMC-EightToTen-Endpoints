@@ -21,12 +21,27 @@ namespace KumarTMC_EightToTen_Endpoints.Controllers
         
         
 
-        [HttpGet]
-        [Route("GuessIt/{difficulty}/{guessnum}")]
-                public string GuessIt(string difficulty, int guessnum)
 
+        [HttpGet]
+        [Route("hard/{guessnum}")]
+        public string hard (string guessnum)
         {
-            return _guessItService.GuessIt(difficulty, guessnum);
+            return _guessItService.hard(guessnum);
         }
+
+        [HttpGet]
+        [Route("medium/{guessnum}")]
+        public string  medium (string guessnum)
+        {
+            return _guessItService.medium(guessnum);
+        }
+
+        [HttpGet]
+        [Route("easy/{guessnum}")]
+        public string easy(string guessnum)
+        {
+            return _guessItService.easy(guessnum);
+        }
+        
     }
 }
